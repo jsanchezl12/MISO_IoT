@@ -1,0 +1,12 @@
+List of parameters
+------------------------------------------
+device_type:1
+device_id:13
+device_longitude:-74.05875205993652
+device_latitude:4.5997816266916915
+device_elevation:0.0
+device_radius:0.0
+device_hide:0
+device_draw_battery:false
+device_sensor_unit_radius:65.0
+device_script_file_name:ScriptNodoSensor.csc

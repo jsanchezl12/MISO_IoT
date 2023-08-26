@@ -1,0 +1,19 @@
+CupCarbon v. IoT 5.0
+----------------
+name:RetoCapaComunicacion
+zoom:0
+centerposition_la:4.595228522523754
+centerposition_lo:-74.06118750572205
+map:0
+display_details:true
+draw_radio_links:true
+draw_sensor_arrows:true
+radio_links_color:0
+draw_marker_arrows:false
+display_rl_distance:false
+propagation:true
+display_marker_distance:false
+display_radio_messages:true
+draw_script_file_name:true
+display_print_messages:true
+display_all_routes:false

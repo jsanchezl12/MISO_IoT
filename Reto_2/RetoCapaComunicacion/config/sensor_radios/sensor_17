@@ -1,0 +1,56 @@
+ List of radio Modules for the Sensor17
+------------------------------------------
+radio_name:radio1
+radio_standard:ZIGBEE
+radio_my:0
+radio_channel:0
+radio_network_id:13108
+radio_radius:100.0
+radio_etx:5.92E-5
+radio_erx:2.86E-5
+radio_esleep:1.0E-7
+radio_elisten:1.0E-6
+radio_data_rate:250000
+conso_tx_model:Classical (Tx)
+conso_rx_model:Classical (Rx)
+radio_name:radio2
+radio_standard:WIFI
+radio_my:0
+radio_channel:0
+radio_network_id:13108
+radio_radius:400.0
+radio_etx:5.92E-5
+radio_erx:2.86E-5
+radio_esleep:1.0E-7
+radio_elisten:1.0E-6
+radio_data_rate:250000
+conso_tx_model:Classical (Tx)
+conso_rx_model:Classical (Rx)
+current_radio_name:radio3
+radio_standard:LORA
+radio_my:0
+radio_channel:0
+radio_network_id:13108
+radio_radius:5000.0
+radio_etx:5.92E-5
+radio_erx:2.86E-5
+radio_esleep:1.0E-7
+radio_elisten:1.0E-6
+radio_data_rate:250000
+spreading_factor:7
+code_rate:0
+conso_tx_model:Classical (Tx)
+conso_rx_model:Classical (Rx)
+radio_name:radio4
+radio_standard:WIFI
+radio_my:0
+radio_channel:0
+radio_network_id:13108
+radio_radius:400.0
+radio_etx:5.92E-5
+radio_erx:2.86E-5
+radio_esleep:1.0E-7
+radio_elisten:1.0E-6
+radio_data_rate:250000
+conso_tx_model:Classical (Tx)
+conso_rx_model:Classical (Rx)
