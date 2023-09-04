@@ -6,7 +6,7 @@ import ssl
 
 # Cambie esta variable por la dirección IP pública de su broker MQTT
 # HOST = "iotlab.virtual.uniandes.edu.co"
-HOST = "3.93.191.87"
+HOST = "34.202.163.71"
 PORT = 8082
 
 USER = "admin"  # Cambie esta variable por el usuario administrador de su broker MQTT
