@@ -23,7 +23,12 @@ Generar llave para JMeter -->
 "C:\Program Files\OpenSSL-Win64\bin\openssl.exe" pkcs12 -export -out ca.p12 -inkey ca.key -in ca.crt
 keytool -importkeystore -destkeystore ca.jks -srcstoretype PKCS12 -srckeystore ca.p12 
 
-javac -version
+brew install openssl  
+openssl version     
+brew install openjdk --cask 
+openssl pkcs12 -export -out caTest.p12 -inkey ca.key -in ca.crt
+keytool -importkeystore -destkeystore caTest.jks -srcstoretype PKCS12 -srckeystore caTest.p12 
 
+javac -version
 psw_jks: mqtt123
 psw_key: mqtt
