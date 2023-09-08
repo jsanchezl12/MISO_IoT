@@ -377,6 +377,11 @@ class HistoricalView(TemplateView):
             return HttpResponseRedirect("/login/")
         return render(request, self.template_name)
 
+class RetoDataView(TemplateView):
+    template_name = 'reto.html'
+    def get(self, request, **kwargs):
+        return render(request, self.template_name, self.get_context_data(**kwargs))
+
 
 class RemaView(TemplateView):
     template_name = 'rema.html'
