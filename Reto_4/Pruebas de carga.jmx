@@ -14,13 +14,13 @@
         <collectionProp name="Arguments.arguments">
           <elementProp name="ip_postgres" elementType="Argument">
             <stringProp name="Argument.name">ip_postgres</stringProp>
-            <stringProp name="Argument.value">34.228.158.132</stringProp>
+            <stringProp name="Argument.value">52.90.229.4</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
             <stringProp name="Argument.desc">Dirección IP pública de la máquina EC2 con el servidor de postgres</stringProp>
           </elementProp>
           <elementProp name="ip_timescale" elementType="Argument">
             <stringProp name="Argument.name">ip_timescale</stringProp>
-            <stringProp name="Argument.value">100.26.21.40</stringProp>
+            <stringProp name="Argument.value">54.226.101.87</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
             <stringProp name="Argument.desc">Dirección IP pública de la máquina EC2 con el servidor de timescale</stringProp>
           </elementProp>
