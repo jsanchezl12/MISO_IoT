@@ -2,27 +2,25 @@
 <jmeterTestPlan version="1.2" properties="5.0" jmeter="5.6.2">
   <hashTree>
     <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Pruebas de carga" enabled="true">
-      <stringProp name="TestPlan.comments"></stringProp>
       <boolProp name="TestPlan.functional_mode">false</boolProp>
       <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
       <boolProp name="TestPlan.serialize_threadgroups">true</boolProp>
       <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
         <collectionProp name="Arguments.arguments"/>
       </elementProp>
-      <stringProp name="TestPlan.user_define_classpath"></stringProp>
     </TestPlan>
     <hashTree>
       <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Variables" enabled="true">
         <collectionProp name="Arguments.arguments">
           <elementProp name="ip_postgres" elementType="Argument">
             <stringProp name="Argument.name">ip_postgres</stringProp>
-            <stringProp name="Argument.value">3.84.143.44</stringProp>
+            <stringProp name="Argument.value">34.228.158.132</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
             <stringProp name="Argument.desc">Dirección IP pública de la máquina EC2 con el servidor de postgres</stringProp>
           </elementProp>
           <elementProp name="ip_timescale" elementType="Argument">
             <stringProp name="Argument.name">ip_timescale</stringProp>
-            <stringProp name="Argument.value">3.85.120.92</stringProp>
+            <stringProp name="Argument.value">100.26.21.40</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
             <stringProp name="Argument.desc">Dirección IP pública de la máquina EC2 con el servidor de timescale</stringProp>
           </elementProp>
@@ -32,9 +30,14 @@
             <stringProp name="Argument.metadata">=</stringProp>
             <stringProp name="Argument.desc">Puerto del servidor que recibe las peticiones HTTP</stringProp>
           </elementProp>
-          <elementProp name="consulta_url" elementType="Argument">
-            <stringProp name="Argument.name">consulta_url</stringProp>
+          <elementProp name="consulta_url_2" elementType="Argument">
+            <stringProp name="Argument.name">consulta_url_2</stringProp>
             <stringProp name="Argument.value">/rema/Temperatura?from=1625115600000&amp;to=1627793999999</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="consulta_url" elementType="Argument">
+            <stringProp name="Argument.value">/mapJsonReto/TEST?from=1625115600000&amp;to=1627793999999</stringProp>
+            <stringProp name="Argument.name">consulta_url</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
