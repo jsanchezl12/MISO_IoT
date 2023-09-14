@@ -89,6 +89,7 @@ void mqtt_connect()
     if (client.connect(MQTT_USER, MQTT_USER, MQTT_PASS)) {
       
       Serial.println("connected.");
+      Serial.println(MQTT_TOPIC_SUB);
       client.subscribe(MQTT_TOPIC_SUB);
       
     } else {
@@ -119,7 +120,7 @@ void sendSensorData(float temperatura, float humedad) {
   data += "}";
   char payload[data.length()+1];
   data.toCharArray(payload,data.length()+1);
-  
+  Serial.println(MQTT_TOPIC_PUB);
   client.publish(MQTT_TOPIC_PUB, payload);
 }
 

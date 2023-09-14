@@ -89,7 +89,7 @@ WSGI_APPLICATION = 'IOTMonitoringServer.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
-
+# Database Postgresql
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
@@ -166,8 +166,8 @@ MQTT_USER = "admin"
 MQTT_PASSWORD = "admin"
 
 # Credenciales para el usuario publicador del bróker MQTT
-MQTT_USER_PUB = "admin2"
-MQTT_PASSWORD_PUB = "admin2"
+MQTT_USER_PUB = "admin"
+MQTT_PASSWORD_PUB = "admin"
 
 # Tópico a suscribir. "+/+/+/+/out" se suscribe únicamente a los
 # tópicos con forma <país>/<estado>/<ciudad>/<usuario>/out.
