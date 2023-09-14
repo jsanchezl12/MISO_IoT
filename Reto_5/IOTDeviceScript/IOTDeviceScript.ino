@@ -233,10 +233,8 @@ void displayMessage(String message) {
   if (message.equals("OK")) {
     display.println("    " + message); 
   } else {
-    display.setTextSize(2);
-    display.println("");
-    display.println("");
-    display.println(message); 
+    display.setTextSize(1);
+    display.println("ER " + message); 
   }
 }
 
