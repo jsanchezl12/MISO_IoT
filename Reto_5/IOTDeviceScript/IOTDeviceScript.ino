@@ -9,20 +9,21 @@
 
  
 // Definiciones
+//
 
 // Ancho de la pantalla (en pixeles)
 #define SCREEN_WIDTH 128
 // Alto de la pantalla (en pixeles)
 #define SCREEN_HEIGHT 64 // OLED display height, in pixels
 // Pin del sensor de temperatura y humedad
-#define DHTPIN 2
+#define DHTPIN 13
 // Tipo de sensor de temperatura y humedad
 #define DHTTYPE DHT11
 // Intervalo en segundo de las mediciones
 #define MEASURE_INTERVAL 2
 // Duración aproximada en la pantalla de las alertas que se reciban
 #define ALERT_DURATION 60
- 
+
 
 // Declaraciones
 
@@ -40,17 +41,17 @@ PubSubClient client(net);
 
 // WiFi
 // Nombre de la red WiFi
-const char ssid[] = "RedWiFi"; // TODO cambiar por el nombre de la red WiFi
+const char ssid[] = "19092022"; // TODO cambiar por el nombre de la red WiFi
 // Contraseña de la red WiFi
-const char pass[] = "ClaveWiFi"; // TODO cambiar por la contraseña de la red WiFi
+const char pass[] = "Hjck2011/*"; // TODO cambiar por la contraseña de la red WiFi
 
 //Conexión a Mosquitto
-#define USER "UsuarioMQTT" // TODO Reemplace UsuarioMQTT por un usuario (no administrador) que haya creado en la configuración del bróker de MQTT.
-const char MQTT_HOST[] = "ip.maquina.mqtt"; // TODO Reemplace ip.maquina.mqtt por la IP del bróker MQTT que usted desplegó. Ej: 192.168.0.1
+#define USER "admin" // TODO Reemplace UsuarioMQTT por un usuario (no administrador) que haya creado en la configuración del bróker de MQTT.
+const char MQTT_HOST[] = "34.224.66.235"; // "ip.maquina.mqtt"; // TODO Reemplace ip.maquina.mqtt por la IP del bróker MQTT que usted desplegó. Ej: 192.168.0.1
 const int MQTT_PORT = 8082;
 const char MQTT_USER[] = USER;
 //Contraseña de MQTT
-const char MQTT_PASS[] = "ContrasenaMQTT"; // TODO Reemplace ContrasenaMQTT por la contraseña correpondiente al usuario especificado.
+const char MQTT_PASS[] = "admin"; // TODO Reemplace ContrasenaMQTT por la contraseña correpondiente al usuario especificado.
 
 //Tópico al que se recibirán los datos
 // El tópico de publicación debe tener estructura: <país>/<estado>/<ciudad>/<usuario>/out
