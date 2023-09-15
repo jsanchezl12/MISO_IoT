@@ -15,6 +15,8 @@
 #define SCREEN_WIDTH 128
 // Alto de la pantalla (en pixeles)
 #define SCREEN_HEIGHT 64 // OLED display height, in pixels
+// Pin del LED
+#define LED_PIN D6
 // Pin del sensor de temperatura y humedad
 #define DHTPIN 13
 // Tipo de sensor de temperatura y humedad
@@ -47,7 +49,7 @@ const char pass[] = "Hjck2011/*"; // TODO cambiar por la contraseña de la red W
 
 //Conexión a Mosquitto
 #define USER "user1" // TODO Reemplace UsuarioMQTT por un usuario (no administrador) que haya creado en la configuración del bróker de MQTT.
-const char MQTT_HOST[] = "34.224.66.235"; // "ip.maquina.mqtt"; // TODO Reemplace ip.maquina.mqtt por la IP del bróker MQTT que usted desplegó. Ej: 192.168.0.1
+const char MQTT_HOST[] = "54.82.79.43"; // "ip.maquina.mqtt"; // TODO Reemplace ip.maquina.mqtt por la IP del bróker MQTT que usted desplegó. Ej: 192.168.0.1
 const int MQTT_PORT = 8082;
 const char MQTT_USER[] = USER;
 //Contraseña de MQTT
@@ -55,9 +57,11 @@ const char MQTT_PASS[] = "123456"; // TODO Reemplace ContrasenaMQTT por la contr
 
 //Tópico al que se recibirán los datos
 // El tópico de publicación debe tener estructura: <país>/<estado>/<ciudad>/<usuario>/out
-const char MQTT_TOPIC_PUB[] = "pais/estado/ciudad/" USER "/out"; //TODO Reemplace el valor por el tópico de publicación que le corresponde.
+// pais/estado/ciudad/
+// mexico/jalisco/guadalajara/
+const char MQTT_TOPIC_PUB[] = "mexico/jalisco/guadalajara/" USER "/out"; //TODO Reemplace el valor por el tópico de publicación que le corresponde.
 // El tópico de suscripción debe tener estructura: <país>/<estado>/<ciudad>/<usuario>/in
-const char MQTT_TOPIC_SUB[] = "pais/estado/ciudad/" USER "/in"; //TODO Reemplace el valor por el tópico de suscripción que le corresponde.
+const char MQTT_TOPIC_SUB[] = "mexico/jalisco/guadalajara/" USER "/in"; //TODO Reemplace el valor por el tópico de suscripción que le corresponde.
 
 // Declaración de variables globales
 
@@ -265,7 +269,8 @@ String checkAlert() {
     if ((millis() - alertTime) >= ALERT_DURATION * 1000 ) {
       alert = "";
       alertTime = millis();
-     }
+      digitalWrite(LED_PIN, LOW);
+    }
   }
   return message;
 }
@@ -286,6 +291,9 @@ void receivedCallback(char* topic, byte* payload, unsigned int length) {
   Serial.print(data);
   if (data.indexOf("ALERT") >= 0) {
     alert = data;
+  }
+  if (data.indexOf("ALERT-LED") >= 0) {
+    digitalWrite(LED_PIN, HIGH);  // Enciende el bombillo
   }
 }
 
@@ -442,6 +450,10 @@ void setup() {
   setTime();
 
   configureMQTT(); 
+  // Configurar el pin D6 como salida
+  pinMode(LED_PIN, OUTPUT);
+  // Asegurarse de que el bombillo esté apagado inicialmente  
+  digitalWrite(LED_PIN, LOW);
 }
 
 void loop() {

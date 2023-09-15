@@ -1,6 +1,8 @@
 sudo pip install crispy-bootstrap4
 
 
+MQTT Broker
+sudo systemctl status mosquitto.service
 
 IOT Reciever App
 python3 manage.py start_mqtt &
