@@ -281,7 +281,6 @@ String checkAlert() {
  * alert que es la que se lee para mostrar los mensajes.
  */
 void receivedCallback(char* topic, byte* payload, unsigned int length) {
-  Serial.print("\n");
   Serial.print(" Received [");
   Serial.print(topic);
   Serial.print("]: ");

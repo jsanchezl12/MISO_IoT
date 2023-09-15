@@ -117,6 +117,7 @@ def on_disconnect(client: mqtt.Client, userdata, rc):
     Intenta reconectar al bróker.
     '''
     print("Desconectado con mensaje:" + str(mqtt.connack_string(rc)))
+    print("Conectando con usuario: " + settings.MQTT_USER_PUB)
     print("Reconectando...")
     client.reconnect()
 
