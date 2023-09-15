@@ -7,6 +7,8 @@ import paho.mqtt.client as mqtt
 import schedule
 import time
 from django.conf import settings
+import random
+import string
 
 client = mqtt.Client(settings.MQTT_USER_PUB)
 
@@ -22,6 +24,11 @@ def trend_analysis(numbers):
         return "Estable"
     else:
         return "Fluctuante"
+
+def generate_code():
+    # Combinamos dígitos y letras
+    characters = string.ascii_lowercase + string.digits
+    return ''.join(random.choice(characters) for _ in range(5))
 
 def analyze_data():
     # Consulta todos los datos de la última hora, los agrupa por estación y variable
@@ -84,7 +91,8 @@ def analyze_data():
 
             if len(set(last_x_values)) > 1:
                 trend = trend_analysis(last_x_values)
-                message = "ALERT-LED: '{}' esta {}".format(variable, trend)
+                uuid = generate_code()
+                message = "ALERT-LED: [{}]-'{}' esta {}".format(uuid, variable, trend)
                 topic = '{}/{}/{}/{}/in'.format(country, state, city, user)
                 print("MSG -> " + message)
                 print("VALUE -> " + str(last_x_values[0]))

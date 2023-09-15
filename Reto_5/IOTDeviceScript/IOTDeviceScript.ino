@@ -238,7 +238,7 @@ void displayMessage(String message) {
     display.println("    " + message); 
   } else {
     display.setTextSize(1);
-    display.println("ER " + message); 
+    display.println(message); 
   }
 }
 
@@ -281,7 +281,8 @@ String checkAlert() {
  * alert que es la que se lee para mostrar los mensajes.
  */
 void receivedCallback(char* topic, byte* payload, unsigned int length) {
-  Serial.print("Received [");
+  Serial.print("\n");
+  Serial.print(" Received [");
   Serial.print(topic);
   Serial.print("]: ");
   String data = "";
@@ -452,7 +453,7 @@ void setup() {
   configureMQTT(); 
   // Configurar el pin D6 como salida
   pinMode(LED_PIN, OUTPUT);
-  // Asegurarse de que el bombillo esté apagado inicialmente  
+  // Asegurarse de que el bombillo esté apagado inicialmentee  
   digitalWrite(LED_PIN, LOW);
 }
 
